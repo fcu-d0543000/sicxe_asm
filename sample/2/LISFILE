@@ -1,0 +1,67 @@
+SIC/XE Assembler 
+
+LOC/BLK    OBCODE              Source Line
+-------   --------   ----------------------------------
+0000 0               COPY      START   0
+0000 0      17202D   FIRST     STL     RETADR
+0003 0      69202D             LDB    #LENGTH
+                               BASE    LENGTH
+0006 0    4B101036   CLOOP    +JSUB    RDREC
+000A 0      032026             LDA     LENGTH
+000D 0      290000             COMP   #0
+0010 0      332007             JEQ     ENDFIL
+0013 0    4B10105D            +JSUB    WRREC
+0017 0      3F2FEC             J       CLOOP
+001A 0      032010   ENDFIL    LDA     EOF
+001D 0      0F2016             STA     BUFFER
+0020 0      010003             LDA    #3
+0023 0      0F200D             STA     LENGTH
+0026 0    4B10105D            +JSUB    WRREC
+002A 0      3E2003             J      @RETADR
+002D 0      454F46   EOF       BYTE    C'EOF'
+0030 0               RETADR    RESW    1
+0033 0               LENGTH    RESW    1
+0036 0               BUFFER    RESB    4096
+                     .
+                     .
+                     .
+1036 0        B410   RDREC     CLEAR   X
+1038 0        B400             CLEAR   A
+103A 0        B440             CLEAR   S
+103C 0    75101000            +LDT    #4096
+1040 0      E32019   RLOOP     TD      INPUT
+1043 0      332FFA             JEQ     RLOOP
+1046 0      DB2013             RD      INPUT
+1049 0        A004             COMPR   A,S
+104B 0      332008             JEQ     EXIT
+104E 0      57C003             STCH    BUFFER,X
+1051 0        B850             TIXR    T
+1053 0      3B2FEA             JLT     RLOOP
+1056 0      134000   EXIT      STX     LENGTH
+1059 0      4F0000             RSUB
+105C 0          F1   INPUT     BYTE    X'F1'
+                     .
+                     .
+                     .
+105D 0        B410   WRREC     CLEAR   X
+105F 0      774000             LDT     LENGTH
+1062 0      E32011   WLOOP     TD      OUTPUT
+1065 0      332FFA             JEQ     WLOOP
+1068 0      53C003             LDCH    BUFFER,X
+106B 0      DF2008             WD      OUTPUT
+106E 0        B850             TIXR    T
+1070 0      3B2FEF             JLT     WLOOP
+1073 0      4F0000             RSUB
+1076 0          05   OUTPUT    BYTE    X'05'
+                               END     FIRST
+                     .
+                     .
+                     .
+ **********************************************
+ * Block name  Block number  Address  Length  *
+ *--------------------------------------------*
+ *  default         0         0000     1077   *
+ *  CDATA           1         1077     0000   *
+ *  CBLKS           2         1077     0000   *
+ *--------------------------------------------*
+ **********************************************
