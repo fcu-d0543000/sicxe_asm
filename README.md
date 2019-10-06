@@ -8,14 +8,14 @@
 JAVA<br>
 
 三.	格式輸入<br>
-0 ~ 7	 Label <br>
-8  	 Blank<br>
-9     + or blank (extend or relative)<br>
-10~15	 operation code<br>
-16    Blank<br>
-17    @ or # or = (addressing mode or literal)<br>
-18~35	 operand<br>
-36~~  comment<br>
+0 ~ 7: Label <br>
+8: Blank<br>
+9: + or blank (extend or relative)<br>
+10-15: operation code<br>
+16: Blank<br>
+17: @ or # or = (addressing mode or literal)<br>
+18-35: operand<br>
+36..: comment<br>
 
 輸入限制:<br>
     空格使用空白鍵，禁止 TAB。<br>
