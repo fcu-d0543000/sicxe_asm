@@ -1,8 +1,8 @@
 一.	執行程式<br>
     SRCFILE 放 Assembly program, 產生 LISFILE, OBJFILE<br>
     在資料夾中 (如無法執行，請安裝JDK10版本且設定環境變數)<br>
-	雙點d0543000 sicxeasm.jar<br>
-	在cmd 中輸入java -jar d0543000sicxeasm.jar<br>
+	雙點d0543000 sicxeasm.jar<br>
+	在cmd 中輸入java -jar d0543000sicxeasm.jar<br>
 
 二.	開發語言<br>
 JAVA<br>
@@ -97,8 +97,6 @@ Literal pool 使用 Stack<br>
     " *** operand should < 16777216."<br>
     " *** Missing operand in BASE statement."<br>
     " *** Undefined symbol in BASE statement."<br>
-
-九.	錯誤訊息列表(續)<br>
     " *** Operand must be absolute or relative attribute in BASE statement."<br>
     " *** Operand should not follow LTORG statement."<br>
     " *** Undefined label after END statement."<br>
