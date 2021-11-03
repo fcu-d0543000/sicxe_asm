@@ -1,10 +1,13 @@
-## 一.	執行程式<br>
+# SIC/XE Assembler
+2021 FCU 系統程式 Final Project
+
+## 一.	執行程式
     SRCFILE 放 Assembly program, 產生 LISFILE, OBJFILE>
     在資料夾中 (如無法執行，請安裝JDK10版本且設定環境變數)>
 	雙點d0543000 sicxeasm.jar
 	在cmd 中輸入java -jar d0543000sicxeasm.jar
 
-## 二.	開發語言<br>
+## 二.	開發語言
 	JAVA
 
 ## 三.	格式輸入
